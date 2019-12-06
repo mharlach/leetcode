@@ -5,6 +5,10 @@ public class LongestPalindromeQuestion
         if (string.IsNullOrWhiteSpace(s) == false)
         {
             var c1 = LongestPalindrome(s, 2);
+            if(c1.Length == s.Length)
+            {
+                return c1;
+            }
             var c2 = LongestPalindrome(s, 3);
 
             return c1.Length > c2.Length ? c1 : c2;
