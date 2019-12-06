@@ -4,10 +4,10 @@ public class LongestPalindromeQuestion
     {
         if (string.IsNullOrWhiteSpace(s) == false)
         {
-           var c1 = LongestPalindrome(s,2);
-           var c2 = LongestPalindrome(s,3);
+            var c1 = LongestPalindrome(s, 2);
+            var c2 = LongestPalindrome(s, 3);
 
-           return c1.Length > c2.Length ? c1 : c2;
+            return c1.Length > c2.Length ? c1 : c2;
         }
         else
         {
@@ -17,7 +17,7 @@ public class LongestPalindromeQuestion
 
     public string LongestPalindrome(string s, int z)
     {
-        string best = s.Substring(0,1);
+        string best = s.Substring(0, 1);
         if (s.Length >= z)
         {
             int start = 0;
@@ -34,33 +34,36 @@ public class LongestPalindromeQuestion
                 }
 
                 start += 1;
-            } while(start + z < s.Length);
+            } while (start + z <= s.Length);
         }
-        
+
         return best;
     }
 
-    public string ExpandSearch(string s, string current, int start, int length)
+    public string ExpandSearch(string s, string best, int start, int length)
     {
         start -= 1;
-        length += 1;
-        while (start > 0 && start + length <= s.Length)
+        length += 2;
+        while (start >= 0 && start + length <= s.Length)
         {
             var check = s.Substring(start, length);
             if (IsPalindrome(check))
             {
-                if (current.Length > check.Length)
+                if(check.Length> best.Length)
                 {
-                    current = check;
+                    best = check;
                 }
             }
             else
             {
                 break;
             }
+
+            start -= 1;
+            length += 2;
         }
 
-        return current;
+        return best;
     }
 
     public bool IsPalindrome(string s)
