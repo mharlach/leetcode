@@ -17,10 +17,10 @@ namespace Core
                 if (down)
                 {
                     j += 1;
-                    if (j == numRows - 1)
+                    if (j == numRows)
                     {
                         down = false;
-                        j -= 1;
+                        j -= 2;
                         i += 1;
                     }
                 }
