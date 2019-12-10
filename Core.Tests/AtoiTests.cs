@@ -39,5 +39,19 @@ namespace Core.Tests
             var r = new Atoi().MyAtoi("-91283472332");
             Assert.AreEqual(-2147483648, r);
         }
+
+        [TestMethod]
+        public void Case6()
+        {
+            var r = new Atoi().MyAtoi("  -0012a42");
+            Assert.AreEqual(-12, r);
+        }
+
+        [TestMethod]
+        public void Case7()
+        {
+            var r = new Atoi().MyAtoi("-5-");
+            Assert.AreEqual(-5, r);
+        }
     }
 }
