@@ -12,6 +12,7 @@ namespace Core.Tests
         public void Case1()
         {
            var r = new TreeRecovery().RecoverFromPreorder("1-2--3--4-5--6--7");
+           
         }
 
        
