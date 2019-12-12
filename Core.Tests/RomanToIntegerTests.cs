@@ -12,35 +12,35 @@ namespace Core.Tests
         public void Case1()
         {
             var r = new RomanToInteger().RomanToInt("III");
-            Assert.AreEqual(3,r);
+            Assert.AreEqual(3, r);
         }
 
         [TestMethod]
         public void Case2()
         {
             var r = new RomanToInteger().RomanToInt("IV");
-            Assert.AreEqual(4,r);
+            Assert.AreEqual(4, r);
         }
 
         [TestMethod]
         public void Case3()
         {
             var r = new RomanToInteger().RomanToInt("IX");
-            Assert.AreEqual(9,r);
+            Assert.AreEqual(9, r);
         }
 
         [TestMethod]
         public void Case4()
         {
             var r = new RomanToInteger().RomanToInt("LVIII");
-            Assert.AreEqual(58,r);
+            Assert.AreEqual(58, r);
         }
 
         [TestMethod]
         public void Case5()
         {
             var r = new RomanToInteger().RomanToInt("MCMXCIV");
-            Assert.AreEqual(1994,r);
+            Assert.AreEqual(1994, r);
         }
 
     }

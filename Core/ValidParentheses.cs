@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace Core
@@ -26,11 +27,11 @@ namespace Core
                     }
                     else
                     {
-                        if(currentStack.Count == 0)
+                        if (currentStack.Count == 0)
                         {
                             return false;
                         }
-                        
+
                         var pop = currentStack.Pop();
                         if (c != charSets[pop])
                         {
