@@ -39,5 +39,7 @@ namespace Core.Tests
             var r = new ValidParentheses().IsValid("{[]}");
             Assert.AreEqual(true,r);
         }
+
+        
     }
 }

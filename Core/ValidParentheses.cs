@@ -7,7 +7,7 @@ namespace Core
         public bool IsValid(string s)
         {
             var openChars = new HashSet<char>(new char[] { '(', '[', '{' });
-            var charSets = new Dictionary<char,char>
+            var charSets = new Dictionary<char, char>
             {
                 {'(',')'},
                 {'[',']'},
@@ -26,15 +26,28 @@ namespace Core
                     }
                     else
                     {
+                        if(currentStack.Count == 0)
+                        {
+                            return false;
+                        }
+                        
                         var pop = currentStack.Pop();
-                        if(c != charSets[pop])
+                        if (c != charSets[pop])
                         {
                             return false;
                         }
                     }
                 }
 
-                return true;
+                if (currentStack.Count > 0)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+
             }
             else
             {
