@@ -9,7 +9,6 @@ namespace Core
         public IList<IList<int>> Go(int[] nums)
         {
             IList<IList<int>> results = new List<IList<int>>();
-
             var found = false;
             for (int a = 0; a < nums.Length; a++)
             {
