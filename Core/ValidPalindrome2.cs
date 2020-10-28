@@ -28,15 +28,19 @@ namespace Core.ValidPalindrome2
                     var checkList = new[] { subLeft, subRight };
                     foreach (var item in checkList)
                     {
-                        for (int n = 0; n < item.Length; n++)
+                        bool isValid = true; 
+                        half = (item.Length + 1) / 2;
+                        for (int n = 0; n < half; n++)
                         {
-                            if (item[i] != item[item.Length - 1 - i])
+                            if (item[n] != item[item.Length - 1 - n])
                             {
-                                return false;
+                                isValid = false;
+                                break;
                             }
                         }
 
-                        return true;
+                        if (isValid == true)
+                            return isValid;
                     }
 
                     return false;
